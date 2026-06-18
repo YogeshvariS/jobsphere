@@ -1,0 +1,66 @@
+import mongoose, { Model, Schema } from "mongoose";
+
+export enum UserRole {
+  JOB_SEEKER = "JOB_SEEKER",
+  EMPLOYER = "EMPLOYER",
+}
+
+export interface IUser {
+  name: string;
+  email: string;
+
+  password?: string;
+
+  image?: string;
+
+  role: UserRole;
+
+  resumeUrl?: string;
+
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const UserSchema = new Schema<IUser>(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+    },
+
+    password: {
+      type: String,
+    },
+
+    image: {
+      type: String,
+    },
+
+    role: {
+      type: String,
+      enum: Object.values(UserRole),
+      default: UserRole.JOB_SEEKER,
+    },
+
+    resumeUrl: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const User =
+  (mongoose.models.User as Model<IUser>) ||
+  mongoose.model<IUser>("User", UserSchema);
+
+export default User;
