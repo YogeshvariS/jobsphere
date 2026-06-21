@@ -6,9 +6,11 @@ export enum UserRole {
 }
 
 export interface IUser {
-    _id?: Types.ObjectId;
+  _id?: Types.ObjectId;
+
   name: string;
   email: string;
+
   password?: string;
 
   image?: string;
@@ -17,6 +19,6 @@ export interface IUser {
 
   resumeUrl?: string;
 
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

@@ -7,12 +7,14 @@ if (!MONGODB_URI) {
   throw new Error("MONGODB_URI is missing");
 }
 
-const cached = global.mongoose || {
-  conn: null,
-  promise: null,
-};
+let cached = global.mongoose;
 
-global.mongoose = cached;
+if (!cached) {
+  cached = global.mongoose = {
+    conn: null,
+    promise: null,
+  };
+}
 
 export async function connectDB() {
   if (cached.conn) {
@@ -20,6 +22,7 @@ export async function connectDB() {
   }
 
   if (!cached.promise) {
+    console.log("Mongo URI:", MONGODB_URI);
     cached.promise = mongoose.connect(MONGODB_URI);
   }
 

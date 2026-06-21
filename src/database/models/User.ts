@@ -14,8 +14,8 @@ email: {
   required: true,
   unique: true,
   lowercase: true,
+  trim: true,
 },
-
 password: {
   type: String,
 },
@@ -41,7 +41,7 @@ timestamps: true,
 );
 
 const User =
-(mongoose.models.User as Model<IUser>) ||
-mongoose.model<IUser>("User", UserSchema);
+  (mongoose.models.User as mongoose.Model<IUser>) ||
+  mongoose.model<IUser>("User", UserSchema);
 
 export default User;
