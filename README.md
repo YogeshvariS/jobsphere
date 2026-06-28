@@ -12,23 +12,19 @@ JobSphere is a modern job portal application built with **Next.js 16**, **TypeSc
 * Zod
 * bcryptjs
 
-## Features Completed
+## Current Progress
 
-* Project setup with Next.js App Router
-* Environment configuration
-* MongoDB Atlas integration
-* Mongoose database connection
-* User model and schema
-* User registration API
-* Password hashing using bcryptjs
-* User login API
-* Password verification
-* Input validation using Zod
-* Initial NextAuth configuration
+* ✅ Project initialized with Next.js App Router
+* ✅ MongoDB Atlas connected
+* ✅ Database connection using Mongoose
+* ✅ User authentication APIs (Register & Login)
+* ✅ Password hashing with bcryptjs
+* ✅ Request validation using Zod
+* ✅ Initial NextAuth setup
 
 ## Project Structure
 
-```
+```text
 src/
 ├── app/
 │   ├── api/
@@ -74,22 +70,25 @@ Start the development server:
 npm run dev
 ```
 
-Open:
+Open your browser and visit:
 
-```
+```text
 http://localhost:3000
 ```
 
 ## Upcoming Features
 
-* Credentials Authentication with NextAuth
-* Google Authentication
+* Complete NextAuth Credentials authentication
+* Google OAuth authentication
 * Employer Dashboard
 * Job Seeker Dashboard
-* Job Posting
-* Job Search & Filters
-* Resume Upload
-* AWS S3 Integration
+* Job Posting & Management
+* Job Search & Filtering
+* Resume Upload (AWS S3)
 * Role-Based Authorization
 * Protected Routes
-* Deployment
+* Deployment (Vercel)
+
+## Author
+
+Developed by **Yogeshvari Suryawanshi**
