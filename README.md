@@ -1,26 +1,49 @@
 # JobSphere
 
-JobSphere is a modern job portal application built with **Next.js 16**, **TypeScript**, **MongoDB Atlas**, and **NextAuth**. The platform connects job seekers with employers and provides a scalable architecture for authentication, job posting, and job applications.
+JobSphere is a full-stack job portal application built with **Next.js 16**, **TypeScript**, **MongoDB Atlas**, and **NextAuth**. It is designed to connect job seekers with employers through a modern, scalable, and secure platform.
+
+> **Project Status:** 🚧 Under Active Development
+
+---
+
+## Features Implemented
+
+### Authentication
+
+* User Registration API
+* User Login API
+* Password hashing using bcryptjs
+* Password verification
+* Request validation with Zod
+* Initial NextAuth setup
+
+### Database
+
+* MongoDB Atlas integration
+* Mongoose database connection
+* User schema and model
+
+### Backend
+
+* Modular folder structure
+* Environment variable configuration
+* API routes using Next.js App Router
+
+---
 
 ## Tech Stack
 
-* Next.js 16 (App Router)
-* TypeScript
-* MongoDB Atlas
-* Mongoose
-* NextAuth
-* Zod
-* bcryptjs
+| Technology    | Purpose                    |
+| ------------- | -------------------------- |
+| Next.js 16    | Full-stack React Framework |
+| TypeScript    | Type Safety                |
+| MongoDB Atlas | Cloud Database             |
+| Mongoose      | MongoDB ODM                |
+| NextAuth      | Authentication             |
+| Zod           | Input Validation           |
+| bcryptjs      | Password Hashing           |
 
-## Current Progress
-
-* ✅ Project initialized with Next.js App Router
-* ✅ MongoDB Atlas connected
-* ✅ Database connection using Mongoose
-* ✅ User authentication APIs (Register & Login)
-* ✅ Password hashing with bcryptjs
-* ✅ Request validation using Zod
-* ✅ Initial NextAuth setup
+---
 
 ## Project Structure
 
@@ -38,12 +61,15 @@ src/
 └── middleware/
 ```
 
+---
+
 ## Environment Variables
 
-Create a `.env.local` file and add the following:
+Create a `.env.local` file:
 
 ```env
 MONGODB_URI=
+
 NEXTAUTH_SECRET=
 NEXTAUTH_URL=http://localhost:3000
 
@@ -56,30 +82,40 @@ AWS_SECRET_ACCESS_KEY=
 AWS_BUCKET_NAME=
 ```
 
-## Getting Started
+---
 
-Install dependencies:
+## Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the development server:
+Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit:
+Open your browser:
 
 ```text
 http://localhost:3000
 ```
 
-## Upcoming Features
+---
 
-* Complete NextAuth Credentials authentication
-* Google OAuth authentication
+## Roadmap
+
+* Complete NextAuth Credentials Authentication
+* Google OAuth Login
 * Employer Dashboard
 * Job Seeker Dashboard
 * Job Posting & Management
@@ -87,8 +123,12 @@ http://localhost:3000
 * Resume Upload (AWS S3)
 * Role-Based Authorization
 * Protected Routes
-* Deployment (Vercel)
+* Deployment
+
+---
 
 ## Author
 
-Developed by **Yogeshvari Suryawanshi**
+**Yogeshvari Suryawanshi**
+
+Frontend Developer | MERN Stack Developer
