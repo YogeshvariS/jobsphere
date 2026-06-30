@@ -2,7 +2,7 @@ import { ZodError } from "zod";
 
 export function getErrorMessage(error: unknown): string {
   if (error instanceof ZodError) {
-    return error.errors[0]?.message || "Validation failed";
+    return error.issues[0]?.message || "Validation failed";
   }
 
   if (error instanceof Error) {
