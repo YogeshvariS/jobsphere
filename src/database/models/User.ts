@@ -1,4 +1,4 @@
-import mongoose, { Model, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { IUser, UserRole } from "@/modules/auth/types/user.types";
 
 const UserSchema = new Schema<IUser>(

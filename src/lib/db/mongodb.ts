@@ -7,14 +7,21 @@ if (!MONGODB_URI) {
   throw new Error("MONGODB_URI is missing");
 }
 
-let cached = global.mongoose;
-
-if (!cached) {
-  cached = global.mongoose = {
-    conn: null,
-    promise: null,
-  };
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: ReturnType<typeof mongoose.connect> | null;
 }
+
+declare global {
+  var mongoose: MongooseCache | undefined;
+}
+
+const cached: MongooseCache = global.mongoose ?? {
+  conn: null,
+  promise: null,
+};
+
+global.mongoose = cached;
 
 export async function connectDB() {
   if (cached.conn) {
@@ -22,7 +29,6 @@ export async function connectDB() {
   }
 
   if (!cached.promise) {
-    console.log("Mongo URI:", MONGODB_URI);
     cached.promise = mongoose.connect(MONGODB_URI);
   }
 
