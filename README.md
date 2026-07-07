@@ -127,8 +127,8 @@ http://localhost:3000
 
 ---
 
-<!-- ## Author
+## Author
 
 **Yogeshvari Suryawanshi**
 
-Frontend Developer | MERN Stack Developer -->
+Frontend Developer | MERN Stack Developer
