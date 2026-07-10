@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import {
   LayoutDashboard,
   BriefcaseBusiness,
@@ -6,8 +7,9 @@ import {
   Heart,
   User,
   Settings,
-  LogOut,
 } from "lucide-react";
+
+import LogoutButton from "./LogoutButton";
 
 const menuItems = [
   {
@@ -62,7 +64,6 @@ export default function Sidebar() {
               className="mb-2 flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-slate-800"
             >
               <Icon size={20} />
-
               <span>{item.name}</span>
             </Link>
           );
@@ -70,10 +71,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="border-t border-slate-700 p-4">
-        <button className="flex w-full items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-slate-800">
-          <LogOut size={20} />
-          Logout
-        </button>
+        <LogoutButton />
       </div>
     </aside>
   );
