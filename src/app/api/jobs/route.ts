@@ -9,6 +9,7 @@ import {
   createJob,
   getAllJobs,
 } from "@/modules/jobs/services/job.service";
+
 import { getErrorMessage } from "@/lib/api/error";
 
 export async function POST(request: NextRequest) {
@@ -17,8 +18,23 @@ export async function POST(request: NextRequest) {
 
     if (!session) {
       return NextResponse.json(
-        { message: "Unauthorized" },
-        { status: 401 }
+        {
+          message: "Unauthorized",
+        },
+        {
+          status: 401,
+        }
+      );
+    }
+
+    if (session.user.role !== "EMPLOYER") {
+      return NextResponse.json(
+        {
+          message: "Only employers can post jobs.",
+        },
+        {
+          status: 403,
+        }
       );
     }
 
@@ -33,9 +49,15 @@ export async function POST(request: NextRequest) {
       session.user.id
     );
 
-    return NextResponse.json(job, {
-      status: 201,
-    });
+    return NextResponse.json(
+      {
+        message: "Job created successfully.",
+        job,
+      },
+      {
+        status: 201,
+      }
+    );
   } catch (error) {
     return NextResponse.json(
       {
@@ -54,7 +76,14 @@ export async function GET() {
 
     const jobs = await getAllJobs();
 
-    return NextResponse.json(jobs);
+    return NextResponse.json(
+      {
+        jobs,
+      },
+      {
+        status: 200,
+      }
+    );
   } catch (error) {
     return NextResponse.json(
       {
