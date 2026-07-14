@@ -20,3 +20,10 @@ export async function getAllJobs() {
       createdAt: -1,
     });
 }
+
+export async function getJobById(id: string) {
+  return Job.findById(id).populate(
+    "employer",
+    "name email"
+  );
+}
