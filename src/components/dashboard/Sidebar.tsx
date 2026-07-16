@@ -7,6 +7,7 @@ import {
   Heart,
   User,
   Settings,
+  PlusCircle
 } from "lucide-react";
 
 import LogoutButton from "./LogoutButton";
@@ -21,6 +22,11 @@ const menuItems = [
     name: "Jobs",
     href: "/dashboard/jobs",
     icon: BriefcaseBusiness,
+  },
+  {
+    name: "Post Job",
+    href: "/dashboard/jobs/create",
+    icon: PlusCircle,
   },
   {
     name: "Applications",
