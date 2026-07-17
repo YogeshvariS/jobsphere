@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 import {
@@ -54,9 +55,11 @@ export default function Sidebar() {
   return (
     <aside className="flex h-screen w-64 flex-col bg-slate-900 text-white">
       <div className="border-b border-slate-700 p-6">
-        <h1 className="text-2xl font-bold">
-          JobSphere
-        </h1>
+       <Link href="/dashboard">
+          <h1 className="text-2xl font-bold tracking-wide transition hover:text-blue-400">
+            JobSphere
+          </h1>
+        </Link>
       </div>
 
       <nav className="flex-1 p-4">
