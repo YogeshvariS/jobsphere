@@ -46,11 +46,27 @@ export const createJobSchema = z.object({
   }),
 
   skills: z
-    .array(z.string().trim().min(1))
+    .array(
+      z
+        .string()
+        .trim()
+        .min(1, "Skill cannot be empty")
+    )
     .max(15, "You can add up to 15 skills")
     .default([]),
 });
 
-export type CreateJobSchema = z.infer<
+/**
+ * Values accepted by the schema before Zod applies
+ * defaults and transformations.
+ */
+export type CreateJobFormInput = z.input<
+  typeof createJobSchema
+>;
+
+/**
+ * Validated values returned after Zod parsing.
+ */
+export type CreateJobSchema = z.output<
   typeof createJobSchema
 >;
