@@ -16,7 +16,6 @@ import {
   Users,
 } from "lucide-react";
 
-// import LoginForm from "@/components/auth/LoginForm";
 import LoginForm from "@/modules/auth/components/LoginForm";
 const benefits = [
   {
